@@ -1,0 +1,54 @@
+{
+    "name": "rfpdl/test-package",
+    "description": "Sample package",
+    "keywords": [
+        "rfpdl",
+        "test-package"
+    ],
+    "homepage": "https://github.com/rfpdl/test-package",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Roy Francis Ponce de Leon",
+            "email": "rfpdl@outlook.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "5.8.*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "3.8.*",
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rfpdl\\TestPackage\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Rfpdl\\TestPackage\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Rfpdl\\TestPackage\\TestPackageServiceProvider"
+            ],
+            "aliases": {
+                "TestPackage": "Rfpdl\\TestPackage\\TestPackageFacade"
+            }
+        }
+    }
+}
